@@ -1,35 +1,4 @@
-#define MENU_ELEMENTS_NUMBER 4
-#include <iostream>
-#include <string>
-#include <conio.h>
-using namespace std;
-
-int line()
-{
-   cout << "-------------------------------------"<<endl;
-};
-
-char menu()
-{
-    line();
-    string menu[MENU_ELEMENTS_NUMBER] = { "load new file", "modify image", "save changes", "exit" };
-	for ( int i = 0; i < MENU_ELEMENTS_NUMBER; i++ )
-		cout << i+1 << ". " << menu[i] << endl;
-    line();
-    char decision=getch();
-    return decision;
-};
-
-char submenu()
-{
-    string submenu[] = { "sepia", "black&white", "negative", "contour", "back to options"};
-    int submenu_elements = sizeof(submenu)/sizeof(submenu[0]);
-    for ( int j = 0; j < submenu_elements; )
-    	cout << j<< ". " << submenu[j++] << endl;
-    line();
-	char decision=getch();
-    return decision;
-};
+#include "functions.h"
 
 int main()
  {
@@ -90,4 +59,32 @@ int main()
     } while (exit == false);
 	return 0;
 
+}
+
+
+void line()
+{
+   cout << "-------------------------------------"<<endl;
+}
+
+char menu()
+{
+    line();
+    string menu[MENU_ELEMENTS_NUMBER] = { "load new file", "modify image", "save changes", "exit" };
+	for ( int i = 0; i < MENU_ELEMENTS_NUMBER; i++ )
+		cout << i+1 << ". " << menu[i] << endl;
+    line();
+    char decision=getch();
+    return decision;
+}
+
+char submenu()
+{
+    string submenu[] = { "sepia", "black&white", "negative", "contour", "back to options"};
+    int submenu_elements = sizeof(submenu)/sizeof(submenu[0]);
+    for ( int j = 0; j < submenu_elements; )
+    	cout << j<< ". " << submenu[j++] << endl;
+    line();
+	char decision=getch();
+    return decision;
 }
