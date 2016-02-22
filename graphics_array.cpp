@@ -2,20 +2,14 @@
 #include <iostream>
 #include <string>
 #include <conio.h>
+
+
 using namespace std;
-
-int line()
-{
-   cout << "-------------------------------------"<<endl;
-};
-
 char menu()
 {
-    line();
     string menu[MENU_ELEMENTS_NUMBER] = { "load new file", "modify image", "save changes", "exit" };
 	for ( int i = 0; i < MENU_ELEMENTS_NUMBER; i++ )
-		cout << i+1 << ". " << menu[i] << endl;
-    line();
+		cout << i+1 << ". "<<menu[i] << endl;
     char decision=getch();
     return decision;
 };
@@ -25,14 +19,17 @@ char submenu()
     string submenu[] = { "sepia", "black&white", "negative", "contour", "back to options"};
     int submenu_elements = sizeof(submenu)/sizeof(submenu[0]);
     for ( int j = 0; j < submenu_elements; )
-    	cout << j<< ". " << submenu[j++] << endl;
-    line();
-	char decision=getch();
+			{
+				cout << j+1<< ". " << submenu[j++] << endl;
+			}
+
+    char decision=getch();
     return decision;
 };
 
 int main()
  {
+
     bool exit = false;
     cout << "Graphics"<< endl;
 	cout << "What do you think about programming?" << endl;
@@ -43,7 +40,7 @@ int main()
       {
 		case '1':
 			cout << "Loading file ..." << endl;
-			// powinna pojawic sie instrukcja wczytująca plik albo całość wpisać w funkcję
+			// powinna pojawic sie instrukcja wczytujjąca plik
 			break; //alternatywa dla wczytania innej grafiki
 		case '2':
 		{
